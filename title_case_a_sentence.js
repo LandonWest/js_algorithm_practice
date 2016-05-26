@@ -97,15 +97,21 @@ function titleCase(str) {
 titleCase("I'm a little tea pot", "");
 
 
-// Fifth Solution:
+// Fifth Solution: (THIS IS MY PERSONAL FAVORITE!)
 
 function titleCase(str) {
-  return str.replace(/\w\S*/g, function(word){
-    return word.charAt(0).toUpperCase()+word.substr(1).toLowerCase();});
+  return str.replace(/\w\S*/g, function(word) {
+    return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
+  });
 }
 
 titleCase("I'm a little tea pot", "");
-🚀 Run Code
+
+As you can see, this function doesn’t modify the string you give it, but returns a new string with each word capitalized.
+
+//Note the use of the regular expression in this code. The string \w\S* matches a “word character” followed by zero or more “non-whitespace characters”. Then, rather than use a replacement pattern, a function is used to process what’s found with the pattern. That’s good stuff.
+
+
 
 // Sixth Solution:
 
