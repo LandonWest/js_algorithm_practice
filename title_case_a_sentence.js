@@ -24,26 +24,23 @@ titleCase("I'm a little tea pot");
 
 
 
-
-________________________________________________________________________________
 // Spoiler Alert!
 // Solution ahead!
-
 // Code Solution 1:
 
-String.prototype.replaceAt = function(index, character) {
-    return this.substr(0, index) + character + this.substr(index+character.length);
-};
-
-
-function titleCase(str) {
-    var newTitle = str.split(' ');
-    var updatedTitle = [];
-    for (var st in newTitle) {
-        updatedTitle[st] = newTitle[st].toLowerCase().replaceAt(0, newTitle[st].charAt(0).toUpperCase());
-    }
-    return updatedTitle.join(' ');
-}
+// String.prototype.replaceAt = function(index, character) {
+//     return this.substr(0, index) + character + this.substr(index+character.length);
+// };
+//
+//
+// function titleCase(str) {
+//     var newTitle = str.split(' ');
+//     var updatedTitle = [];
+//     for (var st in newTitle) {
+//         updatedTitle[st] = newTitle[st].toLowerCase().replaceAt(0, newTitle[st].charAt(0).toUpperCase());
+//     }
+//     return updatedTitle.join(' ');
+// }
 
 // Code Explanation:
 // We are modifying the replaceAt function using prototype to facilitate the use of the program.
@@ -52,15 +49,15 @@ function titleCase(str) {
 
 // Second Solution:
 
-function titleCase(str) {
-  var convertToArray = str.toLowerCase().split(" ");
-  var result = convertToArray.map(function(val){
-      return val.replace(val.charAt(0), val.charAt(0).toUpperCase());
-  });
-  return result.join(" ");
-}
-
-titleCase("I'm a little tea pot");
+// function titleCase(str) {
+//   var convertToArray = str.toLowerCase().split(" ");
+//   var result = convertToArray.map(function(val){
+//       return val.replace(val.charAt(0), val.charAt(0).toUpperCase());
+//   });
+//   return result.join(" ");
+// }
+//
+// titleCase("I'm a little tea pot");
 
 // Code Explanation:
 // We are making entire string lowercase and then converting it into array. Then we are using map function to replace the lowercase character with uppercase. Finally, we are returning the string using join method.
@@ -68,46 +65,46 @@ titleCase("I'm a little tea pot");
 
 // Third Solution:
 
-function titleCase(str) {
-  var newstr=str.toLowerCase().split(" ");
-  for(var i=0;i<newstr.length;i++){
-  var f=newstr[i].charAt(0);
- newstr[i]=newstr[i].replace(newstr[i].charAt(0),function replace(f){
-   return f.toUpperCase();
- });
-
-  }
-  console.log(newstr);
-  return newstr.join(" ");
-}
-
-titleCase("hello world");
+// function titleCase(str) {
+//   var newstr=str.toLowerCase().split(" ");
+//   for(var i=0;i<newstr.length;i++){
+//   var f=newstr[i].charAt(0);
+//  newstr[i]=newstr[i].replace(newstr[i].charAt(0),function replace(f){
+//    return f.toUpperCase();
+//  });
+//
+//   }
+//   console.log(newstr);
+//   return newstr.join(" ");
+// }
+//
+// titleCase("hello world");
 
 
 // Fourth Solution:
 
-function titleCase(str) {
-  str = str.toLowerCase().split(' ');
-  for (var i in str) {
-    str[i] = str[i].replace(str[i].charAt(0), str[i].charAt(0).toUpperCase());
-  };
-  return str.join(' ');
-}
-
-titleCase("I'm a little tea pot", "");
+// function titleCase(str) {
+//   str = str.toLowerCase().split(' ');
+//   for (var i in str) {
+//     str[i] = str[i].replace(str[i].charAt(0), str[i].charAt(0).toUpperCase());
+//   };
+//   return str.join(' ');
+// }
+//
+// titleCase("I'm a little tea pot", "");
 
 
 // Fifth Solution: (THIS IS MY PERSONAL FAVORITE!)
 
-function titleCase(str) {
-  return str.replace(/\w\S*/g, function(word) {
-    return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
-  });
-}
-
-titleCase("I'm a little tea pot", "");
-
-As you can see, this function doesn’t modify the string you give it, but returns a new string with each word capitalized.
+// function titleCase(str) {
+//   return str.replace(/\w\S*/g, function(word) {
+//     return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
+//   });
+// }
+//
+// titleCase("I'm a little tea pot", "");
+//
+// As you can see, this function doesn’t modify the string you give it, but returns a new string with each word capitalized.
 
 //Note the use of the regular expression in this code. The string \w\S* matches a “word character” followed by zero or more “non-whitespace characters”. Then, rather than use a replacement pattern, a function is used to process what’s found with the pattern. That’s good stuff.
 
@@ -115,9 +112,9 @@ As you can see, this function doesn’t modify the string you give it, but retur
 
 // Sixth Solution:
 
-function titleCase(str) {
-  return str.toLowerCase().replace(/( |^)[a-z]/g, (L) => L.toUpperCase());
-}
+// function titleCase(str) {
+//   return str.toLowerCase().replace(/( |^)[a-z]/g, (L) => L.toUpperCase());
+// }
 
 // Code Explanation:
 //
