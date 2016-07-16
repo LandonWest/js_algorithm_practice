@@ -29,12 +29,8 @@ function palindrome(str) {
   // reverse the string
   var newStr = str.split('').reverse().join('');
   // console.log("newStr after reverse: " + newStr);
-  // compare the original to its reverse
-  if (newStr === str) {
-    return true;
-  } else {
-    return false;
-  }
+  // compare the original to its reverse and return true or false
+  return (newStr === str)
 }
 
 palindrome("race car");
@@ -51,4 +47,4 @@ palindrome("race car");
 //          str.replace(/[\W_]/g, '').toLowerCase().split('').reverse().join('');
 // }
 //
-// palindrome("eye"); 
+// palindrome("eye");
