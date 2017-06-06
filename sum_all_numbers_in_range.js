@@ -1,6 +1,7 @@
 // Given an array of two numbers, return the sum of those two numbers and all numbers in between.
 // The lowest number will not always come first.
 
+// original attempt:
 function sumAll(arr) {
   let [a, b] = arr;
   let max = Math.max(a,b);
@@ -22,3 +23,15 @@ function sumAll(arr) {
 // sumAll([4, 1]) should return 10.
 // sumAll([5, 10]) should return 45.
 // sumAll([10, 5]) should return 45.
+
+
+// refactored using fcc hints:
+function sumAll(arr) {
+  let sum = 0;
+
+  for (let i = Math.min(...arr); i <= Math.max(...arr); i++) {
+    sum += i;
+  }
+
+  return sum;
+}
