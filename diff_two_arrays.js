@@ -23,6 +23,25 @@ function diffArray(arr1, arr2) {
 
 // diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 
+//  Second Attempt w/ hints:
+function diffArray(arr1, arr2) {
+  var newArr = [];
+
+  function weed(first, second) {
+    first.forEach(index => {
+      if (!second.includes(index)) {
+        newArr.push(index);
+      }
+    });
+  }
+
+  weed(arr1, arr2);
+  weed(arr2, arr1);
+
+  return newArr;
+}
+
+
 
 // Tests:
 // diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) should return an array.
