@@ -13,6 +13,11 @@ function booWho(bool) {
 
 booWho(null);
 
+// Second passing attempt
+function  booWho(bool) {
+  return typeof bool === 'boolean';
+}
+
 // Tests:
 // booWho(true) should return true.
 // booWho(false) should return true.
