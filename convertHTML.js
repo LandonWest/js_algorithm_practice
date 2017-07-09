@@ -11,7 +11,20 @@ function convertHTML(str) {
             .replace(/'/g, '&apos;');
 }
 
-convertHTML("Dolce & Gabbana");
+// Second passing attempt w/ hints from fcc (this happens to be slower than previous solution)
+function convertHTML(str) {
+  const map = {
+    '&': '&amp;',
+    '>': '&gt;',
+    '<': '&lt;',
+    '\"': '&quote;',
+    '\'': '&apos;'
+  }
+
+  return str.split('').map(char => {
+    return map[char] || char;
+  }).join('');
+}
 
 // Tests:
 // convertHTML("Dolce & Gabbana") should return Dolce &​amp; Gabbana.
