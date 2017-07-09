@@ -6,8 +6,7 @@
 
 // First passing attempt:
 function uniteUnique(arr) {
-  const args = [...arguments];
-  const flattened = args.reduce(
+  const flattened = [...arguments].reduce(
     (acc, curr) => acc.concat(curr),
     []
   );
@@ -22,7 +21,13 @@ function uniteUnique(arr) {
   );
 }
 
-uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+// ES6 Set from fcc forum
+function uniteUnique(arr) {
+  //make an array out of arguments and flatten it (using the spread operator)
+  const args = [].concat(...arguments);
+  // create a Set
+  return [...new Set(args)];
+}
 
 // Tests:
 // uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) should return [1, 3, 2, 5, 4].
