@@ -8,6 +8,11 @@ function spinalCase(str) {
             .toLowerCase();
 }
 
+// example from fcc forum (slightly slower than my solution though...)
+function spinalCase(str) {
+  return str.split(/\s|_|(?=[A-Z])/).join('-').toLowerCase()
+}
+
 // Tests:
 // spinalCase("This Is Spinal Tap") should return "this-is-spinal-tap".
 // spinalCase("thisIsSpinalTap") should return "this-is-spinal-tap".
