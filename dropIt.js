@@ -11,11 +11,26 @@
 // First passing attempt:
 function dropElements(arr, func) {
   for (let i = 0; i < arr.length; i++) {
-    if (func(arr[i])) return arr;
-    arguments[0].shift();
-    i--;
+    if (func(arr[i])) break;
+    arr.shift();
+    i-- // when you shift, it re-indexes the arr so you need to go back one to check the new first (0-index) value
   }
-  return [];
+  return arr;
+}
+
+// Second passing attempt, which essentially does the same thing:
+function dropElements(arr, func) {
+  for (let i = 0; i < arr.length; i++) {
+    if (func(arr[0])) break;
+    arr.shift();
+  }
+  return arr;
+}
+
+// Third attempt w/ hints from fcc forum:
+function dropElements(arr, func) {
+  while (arr.length > 0 && !func(arr[0])) arr.shift();
+  return arr;
 }
 
 // Tests:
