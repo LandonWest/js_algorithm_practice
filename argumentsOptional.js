@@ -14,14 +14,12 @@
 
 // First passing attempt:
 function addTogether() {
-  const args = Array.from(arguments);
+  const args = [...arguments];
   if (!args.every(a => Number.isInteger(a))) return undefined;
-
   if (args.length > 1) return args.reduce((a,b) => a+b);
 
-  return function(num) {
-    const innerArgs = Array.from(arguments);
-    if (!innerArgs.every(a => Number.isInteger(a))) return undefined;
+  return (num) => {
+    if (!Number.isInteger(num)) return undefined;
     return args[0] + num;
   };
 }
