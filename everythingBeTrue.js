@@ -12,6 +12,11 @@ function truthCheck(collection, pre) {
   return true;
 }
 
+// Second attempt using "every" method, hinted from fcc forum
+function truthCheck(collection, pre) {
+  return collection.every(obj => obj[pre]);
+}
+
 // Tests:
 // truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex") should return true.
 // truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex") should return false.
